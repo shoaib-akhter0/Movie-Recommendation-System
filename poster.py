@@ -1,16 +1,12 @@
-import os
 import requests
 
-API_KEY = os.getenv("TMDB_API_KEY", "")
+API_KEY = "47e1da70d004af9157bf48e6195690f1"
 
 BASE_URL = "https://api.themoviedb.org/3/movie/"
 IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 
 
 def fetch_poster(movie_id):
-    if not API_KEY:
-        return "https://via.placeholder.com/500x750?text=Set+TMDB+API+Key"
-
     try:
         url = f"{BASE_URL}{movie_id}?api_key={API_KEY}&language=en-US"
 
